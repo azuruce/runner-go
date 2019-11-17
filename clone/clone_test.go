@@ -69,6 +69,7 @@ func TestCommandsPullRequest(t *testing.T) {
 		"git remote add origin https://github.com/octocat/hello-world.git",
 		"git fetch --depth=50 --tags origin +refs/heads/master:",
 		"git checkout master",
+		"git submodule update --recursive --remote",
 		"git fetch origin refs/pull/42/head:",
 		"git merge --no-ff 3650a5d21bbf086fa8d2f16b0067ddeecfa604df",
 	}

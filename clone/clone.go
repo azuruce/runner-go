@@ -69,6 +69,7 @@ func pull(args Args) []string {
 		fmt.Sprintf("git remote add origin %s", args.Remote),
 		fmt.Sprintf("git fetch %s origin +refs/heads/%s:", fetchFlags(args), args.Branch),
 		fmt.Sprintf("git checkout %s", args.Branch),
+		fmt.Sprintf("git submodule update --recursive --remote"),
 		fmt.Sprintf("git fetch origin %s:", args.Ref),
 		fmt.Sprintf("git merge %s %s", mergeFlags(args), args.Commit),
 	}
